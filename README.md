@@ -17,7 +17,12 @@ Welcome to Day 2 of the C Programming journey! This folder explores the core con
    - [calc.c](file:///d:/Desktop/C_Programming/C-programming/01_functions/calc.c)
    - [equatiom.c](file:///d:/Desktop/C_Programming/C-programming/01_functions/equatiom.c)
    - [reminder_theorem.c](file:///d:/Desktop/C_Programming/C-programming/01_functions/reminder_theorem.c)
-3. [Day 2 Practice Questions & Exercises](#day-2-practice-questions--exercises)
+3. [Practice Problems](#practice-problems)
+   - [ans.c](file:///d:/Desktop/C_Programming/C-programming/01_practice_problems/ans.c)
+   - [equation_solve.c](file:///d:/Desktop/C_Programming/C-programming/01_practice_problems/equation_solve.c)
+   - [memory.c](file:///d:/Desktop/C_Programming/C-programming/01_practice_problems/memory.c)
+   - [pythagores.c](file:///d:/Desktop/C_Programming/C-programming/01_practice_problems/pythagores.c)
+4. [Day 2 Practice Questions & Exercises](#day-2-practice-questions--exercises)
 
 ---
 
@@ -120,6 +125,52 @@ Functions make it easy to evaluate mathematical expressions at different data po
       } else {
           printf("The division is false");
       }
+  }
+  ```
+
+---
+
+## Practice Problems
+
+This folder ([01_practice_problems](file:///d:/Desktop/C_Programming/C-programming/01_practice_problems)) contains practical implementations and solutions demonstrating functions, mathematics in C, and pointer/memory addressing.
+
+### 1. [ans.c](file:///d:/Desktop/C_Programming/C-programming/01_practice_problems/ans.c)
+* **Concepts**: Character data types, type casting, and ASCII values.
+* **Summary**: Converts a character variable `a` (initialized to `'R'`) to its corresponding integer ASCII representation using `(int)` type casting, then prints the output.
+* **Code Highlight**:
+  ```c
+  char a = 'R';
+  printf("%d", (int)a); // Prints ASCII value (82)
+  ```
+
+### 2. [equation_solve.c](file:///d:/Desktop/C_Programming/C-programming/01_practice_problems/equation_solve.c)
+* **Concepts**: Translating algebraic expressions, using `<math.h>`'s `pow()` function, and modular function design.
+* **Summary**: Evaluates the quadratic expression $x^2 - 2x + 3$ using a custom function `void equation(double x)` and prints the result for input parameters $3$ and $2.0$.
+* **Code Highlight**:
+  ```c
+  void equation (double x ) {
+      double sol = pow(x,2) - (2*x) + 3 ;
+      printf("The solution of the equation is : %f\n", sol);
+  }
+  ```
+
+### 3. [memory.c](file:///d:/Desktop/C_Programming/C-programming/01_practice_problems/memory.c)
+* **Concepts**: Pointers, addresses, and variable storage in RAM.
+* **Summary**: Prints the physical memory address where the integer variable `a` is stored, using the address-of operator `&` and the `%p` format specifier.
+* **Code Highlight**:
+  ```c
+  int a = 10;
+  printf("%p", (void*)&a); // Prints the memory address of variable a
+  ```
+
+### 4. [pythagores.c](file:///d:/Desktop/C_Programming/C-programming/01_practice_problems/pythagores.c)
+* **Concepts**: Right-angle triangle calculations, Pythagorean theorem formulas, and `<math.h>` functions (`sqrt`, `pow`).
+* **Summary**: Implements three separate functions to calculate the hypotenuse, height, or base of a right-angled triangle, given the other two dimensions.
+* **Code Highlight**:
+  ```c
+  void hypotenuse (double a, double b) {
+      double hyp = sqrt(pow(a,2) + pow(b,2));
+      printf("The length of the hypotenuse is : %f\n", hyp);
   }
   ```
 
