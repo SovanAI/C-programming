@@ -270,3 +270,90 @@ scanf("%d", num);
    scanf("%d", &num);
    ```
 </details>
+
+# 02_loops_probelems
+
+This folder contains practice programs that focus on loops, increment/decrement operations, function calls, string input, and simple program flow in C.
+
+## Files and Purpose
+
+- `condition.c`
+  - Defines a function `info()` that prints student details.
+  - Demonstrates passing arrays and integers to a function.
+  - Shows how to print formatted strings and values.
+
+- `details.c`
+  - Same program structure as `condition.c`.
+  - Uses a `char` array to store names and the `info()` function to print student information.
+  - Includes a homework note to extend the function with `scanf()` input.
+
+- `increment.c`
+  - Shows how prefix and postfix increment/decrement operators change values inside an expression.
+  - Calculates a combined result using `i`, `j`, and `k` with `++` and `--` operators.
+
+- `infinite_loop.c`
+  - Uses a `while` loop to print a countdown from 9 to 0.
+  - Demonstrates a loop termination condition and the use of `--i` to decrease the loop variable.
+
+- `loops.c`
+  - Contains the same `while` loop countdown logic as `infinite_loop.c`.
+  - Also includes a sample expression with `i++`, `++j`, and `--k` to calculate an integer result.
+
+- `string.c`
+  - Reads a full line of text including spaces using `scanf("%99[^\n]", name)`.
+  - Prints the entire input string.
+
+## Concepts Covered
+
+- `while` loops and loop termination
+- Prefix `++i` / postfix `i++` increment behavior
+- Prefix `--i` / postfix `i--` decrement behavior
+- Passing arrays and values to functions
+- Reading string input with `scanf` and the `%[^
+]` format specifier
+- Using `printf` to print formatted output
+
+## How to Compile and Run
+
+Open a terminal in this folder and run:
+
+```powershell
+cd "c:\Users\SOVAN\OneDrive\Documents\C-programming\02_loops_probelems"
+
+gcc condition.c -o condition.exe
+gcc details.c -o details.exe
+gcc increment.c -o increment.exe
+gcc infinite_loop.c -o infinite_loop.exe
+gcc loops.c -o loops.exe
+gcc string.c -o string.exe
+```
+
+Then run any program, for example:
+
+```powershell
+./loop.exe
+```
+
+## Practice Questions and Answers
+
+1. What will the output of `increment.c` be when `i = 6`, `j = 9`, and `k = 15`?
+   - Answer: `28`
+   - Explanation: `i + j + 1 + (++i) + (--j) - (++j) - (++k)` evaluates to `6 + 9 + 1 + 7 + 8 - 9 - 16 = 28`.
+
+2. In `string.c`, why is the format string `%99[^\n]` used instead of `%s`?
+   - Answer: Because `%99[^\n]` reads an entire line including spaces, while `%s` stops at the first whitespace.
+
+3. What does `--i` do inside the `while` loop in `infinite_loop.c`?
+   - Answer: It decrements `i` by one before the next loop iteration, eventually making the loop condition false.
+
+4. What is the difference between `i++` and `++i`?
+   - Answer: `i++` returns the original value before incrementing; `++i` increments first and returns the new value.
+
+5. How does `condition.c` pass the student name to the `info()` function?
+   - Answer: It passes the array `name` as an argument. In C, arrays decay into pointers, so the function receives a reference to the first character of the string.
+
+## Notes
+
+- `details.c` and `condition.c` both demonstrate the same function concept; one includes a student information function and the other is the same example.
+- If you want to make `details.c` interactive, use `scanf()` inside `main()` to read the student name, college, and roll number before calling `info()`.
+
