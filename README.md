@@ -1,40 +1,36 @@
-# DAY 2: Functions and Basic Concepts in C
+# C Programming Learning Journey
 
-Welcome to Day 2 of the C Programming journey! This folder explores the core concepts of functions, user input/output, working with the standard math library, translating mathematical formulas into code, and using conditional statements to verify arithmetic relationships.
-
----
-
-## Table of Contents
-1. [Topics Covered](#topics-covered)
-   - [User Input and Output (`printf` & `scanf`)](#1-user-input-and-output)
-   - [Variables, Operators, and standard Math functions (`math.h`)](#2-variables-operators-and-the-math-library)
-   - [C Functions: Declarations, Definition, and Parameters](#3-c-functions-definition-parameters-and-calls)
-   - [Solving Equations using Functions](#4-solving-mathematical-equations)
-   - [Conditional Statements (`if-else`) & Remainder Verification](#5-conditional-logic-and-the-division-algorithm)
-2. [File Directory Walkthrough](#file-directory-walkthrough)
-   - [taking_data.c](file:///d:/Desktop/C_Programming/C-programming/01_functions/taking_data.c)
-   - [operators_operands.c](file:///d:/Desktop/C_Programming/C-programming/01_functions/operators_operands.c)
-   - [calc.c](file:///d:/Desktop/C_Programming/C-programming/01_functions/calc.c)
-   - [equatiom.c](file:///d:/Desktop/C_Programming/C-programming/01_functions/equatiom.c)
-   - [reminder_theorem.c](file:///d:/Desktop/C_Programming/C-programming/01_functions/reminder_theorem.c)
-3. [Practice Problems](#practice-problems)
-   - [ans.c](file:///d:/Desktop/C_Programming/C-programming/01_practice_problems/ans.c)
-   - [equation_solve.c](file:///d:/Desktop/C_Programming/C-programming/01_practice_problems/equation_solve.c)
-   - [memory.c](file:///d:/Desktop/C_Programming/C-programming/01_practice_problems/memory.c)
-   - [pythagores.c](file:///d:/Desktop/C_Programming/C-programming/01_practice_problems/pythagores.c)
-4. [Day 2 Practice Questions & Exercises](#day-2-practice-questions--exercises)
+Welcome to the C Programming learning repository! This workspace tracks core programming concepts, daily progress, and problem-solving exercises in C.
 
 ---
 
-## Topics Covered
+## 📂 Repository Structure & Table of Contents
 
-### 1. User Input and Output
+* **[Day 2: Functions & Basic Concepts](#day-2-functions--basic-concepts-in-c)**
+  * [Topics Covered](#day-2-topics-covered)
+  * [File Walkthrough (`01_functions`)](#day-2-file-walkthrough)
+  * [Practice Problems (`01_practice_problems`)](#day-2-practice-problems)
+  * [Questions & Exercises](#day-2-practice-questions--exercises)
+* **[Day 3: Loops, Increment/Decrement, & Strings](#day-3-loops-incrementdecrement-operators--strings)**
+  * [Topics Covered](#day-3-topics-covered)
+  * [File Walkthrough (`02_loops_probelems`)](#day-3-file-walkthrough)
+  * [Practice Questions & Exercises](#day-3-practice-questions--exercises)
+
+---
+
+## Day 2: Functions & Basic Concepts in C
+
+This folder explores the core concepts of functions, user input/output, working with the standard math library, translating mathematical formulas into code, and using conditional statements to verify arithmetic relationships.
+
+### Day 2 Topics Covered
+
+#### 1. User Input and Output
 * **`printf()`**: Used to print formatted output to the console. It utilizes placeholders called **format specifiers** (e.g., `%d` for integers, `%f` for floats/doubles, and `%lf` for double precision floating-point numbers).
 * **`scanf()`**: Used to read formatted input from the console. It requires:
   1. A format specifier string (e.g., `"%d%d"` to read two integers).
   2. The address-of operator (`&`) prefixed to variable names (e.g., `&a`, `&b`). The `&` operator tells `scanf` where the variable is located in memory so it can directly store the user's input there.
 
-### 2. Variables, Operators, and the Math Library
+#### 2. Variables, Operators, and the Math Library
 * **Variables and Initialization**: Variables must be declared with a data type (such as `int`, `float`, or `double`) before they can be used. They can be initialized at declaration or assigned a value later.
 * **`<math.h>` Standard Library**: Provides common mathematical operations.
   - `pow(base, exponent)`: Returns the value of $base^{exponent}$. Note that `pow` expects arguments of type `double` and returns a `double`.
@@ -43,7 +39,7 @@ Welcome to Day 2 of the C Programming journey! This folder explores the core con
   - Assignment operator: `=`
   - Arithmetic operators: `+` (addition), `-` (subtraction), `*` (multiplication), `/` (division).
 
-### 3. C Functions: Definition, Parameters, and Calls
+#### 3. C Functions: Definition, Parameters, and Calls
 Functions break down complex problems into smaller, reusable blocks of code.
 * **Function Structure**:
   ```c
@@ -58,10 +54,10 @@ Functions break down complex problems into smaller, reusable blocks of code.
   - **Arguments**: The actual values passed to the function when calling it (e.g., `addition(10.25, 52.63)`).
 * **Float Precision Formatting**: In `printf()`, we can limit the decimal places of a floating-point number using `%.Nf` where `N` is the number of decimal digits (e.g., `%.4f` prints a float with 4 decimal places).
 
-### 4. Solving Mathematical Equations
+#### 4. Solving Mathematical Equations
 Functions make it easy to evaluate mathematical expressions at different data points. Instead of duplicating math formulas, we pass the independent variables as function parameters, calculate the expression value using library calls like `pow()`, and print or return the result. This simplifies evaluating expressions like $2x^2 + 3x - 2$ or $2x^3 + 2x^2 + 3x - 10$ across multiple input values.
 
-### 5. Conditional Logic and the Division Algorithm
+#### 5. Conditional Logic and the Division Algorithm
 * **`if-else` Statements**: Allow decision-making in programs based on conditions.
   ```c
   if (condition) {
@@ -77,9 +73,9 @@ Functions make it easy to evaluate mathematical expressions at different data po
 
 ---
 
-## File Directory Walkthrough
+### Day 2 File Walkthrough
 
-### 1. [taking_data.c](file:///d:/Desktop/C_Programming/C-programming/01_functions/taking_data.c)
+#### 1. [taking_data.c](file:///d:/Desktop/C_Programming/C-programming/01_functions/taking_data.c)
 * **Concepts**: Declaring integer variables, reading multiple variables using `scanf()`, performing addition, and displaying results.
 * **Code Summary**:
   ```c
@@ -89,7 +85,7 @@ Functions make it easy to evaluate mathematical expressions at different data po
   printf("Sum is : %d", sum);
   ```
 
-### 2. [operators_operands.c](file:///d:/Desktop/C_Programming/C-programming/01_functions/operators_operands.c)
+#### 2. [operators_operands.c](file:///d:/Desktop/C_Programming/C-programming/01_functions/operators_operands.c)
 * **Concepts**: Using the `<math.h>` library, variables initialization, the `pow()` function, and printing integer types using format specifiers.
 * **Code Summary**:
   ```c
@@ -98,7 +94,7 @@ Functions make it easy to evaluate mathematical expressions at different data po
   printf("%d", sum);
   ```
 
-### 3. [calc.c](file:///d:/Desktop/C_Programming/C-programming/01_functions/calc.c)
+#### 3. [calc.c](file:///d:/Desktop/C_Programming/C-programming/01_functions/calc.c)
 * **Concepts**: Declaring arithmetic functions (`addition`, `sub`, `multiplication`, `div`), using parameter types `float` and `double`, using `void` return types, and formatting output precision using `%.4f`.
 * **Code Summary**:
   ```c
@@ -107,14 +103,14 @@ Functions make it easy to evaluate mathematical expressions at different data po
   }
   ```
 
-### 4. [equatiom.c](file:///d:/Desktop/C_Programming/C-programming/01_functions/equatiom.c)
+#### 4. [equatiom.c](file:///d:/Desktop/C_Programming/C-programming/01_functions/equatiom.c)
 * **Concepts**: Translating polynomials/equations into C expressions using the `pow()` library function, and evaluating the equations with different argument inputs.
 * **Equations Covered**:
   - `eqn1(x)`: $2x^2 + 3x - 2$
   - `eqn2(x)`: $2x^2 - x + 1$
   - `eqn3(x)`: $2x^3 + 2x^2 + 3x - 10$
 
-### 5. [reminder_theorem.c](file:///d:/Desktop/C_Programming/C-programming/01_functions/reminder_theorem.c)
+#### 5. [reminder_theorem.c](file:///d:/Desktop/C_Programming/C-programming/01_functions/reminder_theorem.c)
 * **Concepts**: Passing multiple arguments to a verification function, calculating expressions, and comparing results using `if-else` control flow to verify division math.
 * **Code Summary**:
   ```c
@@ -130,11 +126,11 @@ Functions make it easy to evaluate mathematical expressions at different data po
 
 ---
 
-## Practice Problems
+### Day 2 Practice Problems
 
 This folder ([01_practice_problems](file:///d:/Desktop/C_Programming/C-programming/01_practice_problems)) contains practical implementations and solutions demonstrating functions, mathematics in C, and pointer/memory addressing.
 
-### 1. [ans.c](file:///d:/Desktop/C_Programming/C-programming/01_practice_problems/ans.c)
+#### 1. [ans.c](file:///d:/Desktop/C_Programming/C-programming/01_practice_problems/ans.c)
 * **Concepts**: Character data types, type casting, and ASCII values.
 * **Summary**: Converts a character variable `a` (initialized to `'R'`) to its corresponding integer ASCII representation using `(int)` type casting, then prints the output.
 * **Code Highlight**:
@@ -143,7 +139,7 @@ This folder ([01_practice_problems](file:///d:/Desktop/C_Programming/C-programmi
   printf("%d", (int)a); // Prints ASCII value (82)
   ```
 
-### 2. [equation_solve.c](file:///d:/Desktop/C_Programming/C-programming/01_practice_problems/equation_solve.c)
+#### 2. [equation_solve.c](file:///d:/Desktop/C_Programming/C-programming/01_practice_problems/equation_solve.c)
 * **Concepts**: Translating algebraic expressions, using `<math.h>`'s `pow()` function, and modular function design.
 * **Summary**: Evaluates the quadratic expression $x^2 - 2x + 3$ using a custom function `void equation(double x)` and prints the result for input parameters $3$ and $2.0$.
 * **Code Highlight**:
@@ -154,7 +150,7 @@ This folder ([01_practice_problems](file:///d:/Desktop/C_Programming/C-programmi
   }
   ```
 
-### 3. [memory.c](file:///d:/Desktop/C_Programming/C-programming/01_practice_problems/memory.c)
+#### 3. [memory.c](file:///d:/Desktop/C_Programming/C-programming/01_practice_problems/memory.c)
 * **Concepts**: Pointers, addresses, and variable storage in RAM.
 * **Summary**: Prints the physical memory address where the integer variable `a` is stored, using the address-of operator `&` and the `%p` format specifier.
 * **Code Highlight**:
@@ -163,7 +159,7 @@ This folder ([01_practice_problems](file:///d:/Desktop/C_Programming/C-programmi
   printf("%p", (void*)&a); // Prints the memory address of variable a
   ```
 
-### 4. [pythagores.c](file:///d:/Desktop/C_Programming/C-programming/01_practice_problems/pythagores.c)
+#### 4. [pythagores.c](file:///d:/Desktop/C_Programming/C-programming/01_practice_problems/pythagores.c)
 * **Concepts**: Right-angle triangle calculations, Pythagorean theorem formulas, and `<math.h>` functions (`sqrt`, `pow`).
 * **Summary**: Implements three separate functions to calculate the hypotenuse, height, or base of a right-angled triangle, given the other two dimensions.
 * **Code Highlight**:
@@ -176,45 +172,43 @@ This folder ([01_practice_problems](file:///d:/Desktop/C_Programming/C-programmi
 
 ---
 
-## Day 2 Practice Questions & Exercises
+### Day 2 Practice Questions & Exercises
 
-### Part A: Multiple Choice Questions
+#### Part A: Multiple Choice Questions
 
-#### 1. What will be the output of `printf("%.2f", 5.6789);`?
+##### 1. What will be the output of `printf("%.2f", 5.6789);`?
 * A) `5.67`
 * B) `5.68`
 * C) `5.678900`
 * D) `5.7`
 
-#### 2. Which operator is used by `scanf` to direct input to the memory address of a variable?
+##### 2. Which operator is used by `scanf` to direct input to the memory address of a variable?
 * A) `*` (dereference)
 * B) `%` (modulo)
 * C) `&` (address-of)
 * D) `&&` (logical AND)
 
-#### 3. What library header must you include to use functions like `pow()` and `sqrt()`?
+##### 3. What library header must you include to use functions like `pow()` and `sqrt()`?
 * A) `<stdio.h>`
 * B) `<stdlib.h>`
 * C) `<conio.h>`
 * D) `<math.h>`
 
-#### 4. If a function is declared with a `void` return type, what does it mean?
+##### 4. If a function is declared with a `void` return type, what does it mean?
 * A) It returns `0` by default.
 * B) It does not return any value.
 * C) It can only accept integer parameters.
 * D) It returns a null pointer.
 
-#### 5. What is the difference between `=` and `==` in C?
+##### 5. What is the difference between `=` and `==` in C?
 * A) `=` is used for comparison, `==` is used for assignment.
 * B) `=` is used for assignment, `==` is used for equality comparison.
 * C) They are interchangeable.
 * D) `=` is for integer comparison, `==` is for float comparison.
 
----
+#### Part B: Code Debugging Challenges
 
-### Part B: Code Debugging Challenges
-
-#### 1. Find and correct the error in the following function:
+##### 1. Find and correct the error in the following function:
 ```c
 void multiply(int a, int b) {
     int result = a * b;
@@ -222,16 +216,14 @@ void multiply(int a, int b) {
 }
 ```
 
-#### 2. Find and correct the error in the input block below:
+##### 2. Find and correct the error in the input block below:
 ```c
 int num;
 printf("Enter a number: ");
 scanf("%d", num);
 ```
 
----
-
-### Part C: Programming Exercises
+#### Part C: Programming Exercises
 
 1. **Custom Polynomial Evaluator**:
    Write a program with a function named `evaluate_expression(double x)` that computes and returns the value of:
@@ -244,10 +236,8 @@ scanf("%d", num);
 3. **Odd or Even Verifier**:
    Write a custom function `void check_odd_even(int number)` that prints whether a number is `Even` or `Odd` using conditional statements (`if-else`) and the modulo operator `%`. Call this function inside `main` using values entered by the user.
 
----
-
 <details>
-<summary><b>Click here to show Answers for Part A & B</b></summary>
+<summary><b>💡 Click here to show Answers for Day 2 Exercises</b></summary>
 
 ### Answers to Part A:
 1. **B** (`%.2f` rounds the value to two decimal places, so `5.6789` becomes `5.68`).
@@ -270,90 +260,4 @@ scanf("%d", num);
    scanf("%d", &num);
    ```
 </details>
-
-# 02_loops_probelems
-
-This folder contains practice programs that focus on loops, increment/decrement operations, function calls, string input, and simple program flow in C.
-
-## Files and Purpose
-
-- `condition.c`
-  - Defines a function `info()` that prints student details.
-  - Demonstrates passing arrays and integers to a function.
-  - Shows how to print formatted strings and values.
-
-- `details.c`
-  - Same program structure as `condition.c`.
-  - Uses a `char` array to store names and the `info()` function to print student information.
-  - Includes a homework note to extend the function with `scanf()` input.
-
-- `increment.c`
-  - Shows how prefix and postfix increment/decrement operators change values inside an expression.
-  - Calculates a combined result using `i`, `j`, and `k` with `++` and `--` operators.
-
-- `infinite_loop.c`
-  - Uses a `while` loop to print a countdown from 9 to 0.
-  - Demonstrates a loop termination condition and the use of `--i` to decrease the loop variable.
-
-- `loops.c`
-  - Contains the same `while` loop countdown logic as `infinite_loop.c`.
-  - Also includes a sample expression with `i++`, `++j`, and `--k` to calculate an integer result.
-
-- `string.c`
-  - Reads a full line of text including spaces using `scanf("%99[^\n]", name)`.
-  - Prints the entire input string.
-
-## Concepts Covered
-
-- `while` loops and loop termination
-- Prefix `++i` / postfix `i++` increment behavior
-- Prefix `--i` / postfix `i--` decrement behavior
-- Passing arrays and values to functions
-- Reading string input with `scanf` and the `%[^
-]` format specifier
-- Using `printf` to print formatted output
-
-## How to Compile and Run
-
-Open a terminal in this folder and run:
-
-```powershell
-cd "c:\Users\SOVAN\OneDrive\Documents\C-programming\02_loops_probelems"
-
-gcc condition.c -o condition.exe
-gcc details.c -o details.exe
-gcc increment.c -o increment.exe
-gcc infinite_loop.c -o infinite_loop.exe
-gcc loops.c -o loops.exe
-gcc string.c -o string.exe
-```
-
-Then run any program, for example:
-
-```powershell
-./loop.exe
-```
-
-## Practice Questions and Answers
-
-1. What will the output of `increment.c` be when `i = 6`, `j = 9`, and `k = 15`?
-   - Answer: `28`
-   - Explanation: `i + j + 1 + (++i) + (--j) - (++j) - (++k)` evaluates to `6 + 9 + 1 + 7 + 8 - 9 - 16 = 28`.
-
-2. In `string.c`, why is the format string `%99[^\n]` used instead of `%s`?
-   - Answer: Because `%99[^\n]` reads an entire line including spaces, while `%s` stops at the first whitespace.
-
-3. What does `--i` do inside the `while` loop in `infinite_loop.c`?
-   - Answer: It decrements `i` by one before the next loop iteration, eventually making the loop condition false.
-
-4. What is the difference between `i++` and `++i`?
-   - Answer: `i++` returns the original value before incrementing; `++i` increments first and returns the new value.
-
-5. How does `condition.c` pass the student name to the `info()` function?
-   - Answer: It passes the array `name` as an argument. In C, arrays decay into pointers, so the function receives a reference to the first character of the string.
-
-## Notes
-
-- `details.c` and `condition.c` both demonstrate the same function concept; one includes a student information function and the other is the same example.
-- If you want to make `details.c` interactive, use `scanf()` inside `main()` to read the student name, college, and roll number before calling `info()`.
 
