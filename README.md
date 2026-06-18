@@ -13,8 +13,13 @@ Welcome to the C Programming learning repository! This workspace tracks core pro
   * [Questions & Exercises](#day-2-practice-questions--exercises)
 * **[Day 3: Loops, Increment/Decrement, & Strings](#day-3-loops-incrementdecrement-operators--strings)**
   * [Topics Covered](#day-3-topics-covered)
-  * [File Walkthrough (`02_loops_probelems`)](#day-3-file-walkthrough)
+  * [File Walkthrough (`02_Strings`)](#day-3-file-walkthrough)
   * [Practice Questions & Exercises](#day-3-practice-questions--exercises)
+* **[Day 4: Loops & Logical Reasoning](#day-4-loops--logical-reasoning)**
+  * [Topics Covered](#day-4-topics-covered)
+  * [File Walkthrough (`03_loops_and_logical_reasoning`)](#day-4-file-walkthrough)
+* **[Practice Problems: Loops & Number Theory](#practice-problems-loops--number-theory)**
+  * [Problem Descriptions (`Problem_Statements_and_solution`)](#problem-descriptions-problem_statements_and_solution)
 
 ---
 
@@ -261,12 +266,11 @@ scanf("%d", num);
    ```
 </details>
 
-<<<<<<<<< Temporary merge branch 1
 ---
 
 ## Day 3: Loops, Increment/Decrement Operators & Strings
 
-This directory ([02_loops_probelems](file:///d:/Desktop/C_Programming/C-programming/02_loops_probelems)) explores iterating control flows (`while` loops), pre- and post-increment/decrement operators, string input parsing, and custom print functions.
+This directory ([02_Strings](file:///d:/Desktop/C_Programming/C-programming/02_Strings)) explores iterating control flows (`while` loops), pre- and post-increment/decrement operators, string input parsing, and custom print functions.
 
 ### Day 3 Topics Covered
 
@@ -280,13 +284,7 @@ In C, the unary increment (`++`) and decrement (`--`) operators modify variables
 > Writing expressions like `res = i + ++i;` or `res = i++ + ++i;` results in **Undefined Behavior** under the ISO C standard because a single variable is modified multiple times (or read and modified) without an intervening sequence point. Different compilers, optimization levels, or CPU architectures can produce different values. Always separate modifications into distinct instructions to ensure portability.
 
 #### 2. Loop Control Structures (`while` loops)
-A `while` loop runs code blocks repeatedly as long as a condition evaluates to true:
-```c
-while (condition) {
-    // Loop body
-    // Update expression (e.g., --i)
-}
-```
+A `while` loop runs code blocks repeatedly as long as a condition evaluates to true.
 * **Loop Variable Update**: To prevent an **infinite loop**, the control variable must be modified within the loop body such that the loop condition eventually evaluates to `false` (e.g., counting down using `--i` or incrementing using `i++`).
 
 #### 3. Handling Strings with Spaces securely
@@ -303,9 +301,9 @@ while (condition) {
 
 ### Day 3 File Walkthrough
 
-#### 1. [condition.c](file:///d:/Desktop/C_Programming/C-programming/02_loops_probelems/condition.c)
+#### 1. [Preincrement_postIncrement.c](file:///d:/Desktop/C_Programming/C-programming/02_Strings/Preincrement_postIncrement.c)
 * **Concepts**: Unary prefix/postfix operator evaluation inside expressions.
-* **Summary**: Initializes variables and computes their summed value using pre-increment, post-increment, and pre-decrement operators.
+* **Summary**: Demonstrates compound expression arithmetic using pre-increment, post-increment, and pre-decrement operators.
 * **Code Highlight**:
   ```c
   int i = 0, j = 5, k = 9;
@@ -313,7 +311,7 @@ while (condition) {
   printf("%d", res); // Prints: 14
   ```
 
-#### 2. [details.c](file:///d:/Desktop/C_Programming/C-programming/02_loops_probelems/details.c)
+#### 2. [details.c](file:///d:/Desktop/C_Programming/C-programming/02_Strings/details.c)
 * **Concepts**: String arguments (character arrays) in function parameters.
 * **Summary**: Passes multiple strings and an integer to a details displayer function `info()`.
 * **Code Highlight**:
@@ -325,32 +323,7 @@ while (condition) {
   }
   ```
 
-#### 3. [increment.c](file:///d:/Desktop/C_Programming/C-programming/02_loops_probelems/increment.c)
-* **Concepts**: Complex unary operations and compiler evaluation precedence.
-* **Summary**: Demonstrates compound expression arithmetic using `i`, `j`, and `k` with prefix increments and decrements.
-* **Code Highlight**:
-  ```c
-  int i = 6, j = 9, k = 15;
-  int res = i + j + 1 + (++i) + (--j) - (++j) - (++k);
-  ```
-
-#### 4. [infinite_loop.c](file:///d:/Desktop/C_Programming/C-programming/02_loops_probelems/infinite_loop.c)
-* **Concepts**: Loop termination conditions, decrement operators inside loop scopes.
-* **Summary**: Counts down from 9 to 0 using a `while` loop, avoiding an infinite loop by decrementing the control variable `i`.
-* **Code Highlight**:
-  ```c
-  int i = 9;
-  while (i >= 0) {
-      printf("I am running current val : %d \n ", i);
-      --i;
-  }
-  ```
-
-#### 5. [loops.c](file:///d:/Desktop/C_Programming/C-programming/02_loops_probelems/loops.c)
-* **Concepts**: Loop structure comparison and implementation.
-* **Summary**: Duplicate loop code showing structured decrement countdown mechanics.
-
-#### 6. [string.c](file:///d:/Desktop/C_Programming/C-programming/02_loops_probelems/string.c)
+#### 3. [string.c](file:///d:/Desktop/C_Programming/C-programming/02_Strings/string.c)
 * **Concepts**: Reading string inputs containing spaces using scansets.
 * **Summary**: Demonstrates how to fetch an input line containing spaces using `[^\n]` inside `scanf`.
 * **Code Highlight**:
@@ -441,91 +414,120 @@ scanf("%29[^\n]", major);
    scanf("%14[^\n]", major);
    ```
 </details>
-=========
-# 02_loops_probelems
 
-This folder contains practice programs that focus on loops, increment/decrement operations, function calls, string input, and simple program flow in C.
+---
 
-## Files and Purpose
+## Day 4: Loops & Logical Reasoning
 
-- `condition.c`
-  - Defines a function `info()` that prints student details.
-  - Demonstrates passing arrays and integers to a function.
-  - Shows how to print formatted strings and values.
+This directory ([03_loops_and_logical_reasoning](file:///d:/Desktop/C_Programming/C-programming/03_loops_and_logical_reasoning)) focuses on loop logic (`while` and `for` loops), controlling iteration to prevent infinite executions, evaluating conditional operations, and parsing user input to run numeric calculations.
 
-- `details.c`
-  - Same program structure as `condition.c`.
-  - Uses a `char` array to store names and the `info()` function to print student information.
-  - Includes a homework note to extend the function with `scanf()` input.
+### Day 4 Topics Covered
 
-- `increment.c`
-  - Shows how prefix and postfix increment/decrement operators change values inside an expression.
-  - Calculates a combined result using `i`, `j`, and `k` with `++` and `--` operators.
+#### 1. Grading Systems and Logic Bounds
+* **Nested Conditional Statements (`if-else if-else`)**: Evaluates a grade bounds range step-by-step.
+* **Logical AND (`&&`)**: Ensures multiple constraints are satisfied concurrently (e.g., checking if marks are between 10 and 15: `marks < 15 && marks >= 10`).
+* **Input Range Validation**: Handling unexpected user inputs gracefully by utilizing fallback `else` blocks for out-of-bound errors.
 
-- `infinite_loop.c`
-  - Uses a `while` loop to print a countdown from 9 to 0.
-  - Demonstrates a loop termination condition and the use of `--i` to decrease the loop variable.
+#### 2. Multiplication Tables with Loops
+* **Dynamic Table Ranges**: Printing custom multiplication tables (`1` to `10`) dynamically using `while` loops based on user-supplied parameters.
+* **Logical Loop Conditions**: Using combined conditions like `num <= 10 && num < 11` to reinforce loop invariant logic.
 
-- `loops.c`
-  - Contains the same `while` loop countdown logic as `infinite_loop.c`.
-  - Also includes a sample expression with `i++`, `++j`, and `--k` to calculate an integer result.
+#### 3. Factorial & Countdown Loops
+* **Accumulators**: Accumulating values across loop iterations (e.g., `Factorial = fact * Factorial`).
+* **Loop Variable Decaying**: Decreasing loop control variables inside the loop scope (e.g., `fact = fact - 1` or `--fact`) to ensure loop termination.
 
-- `string.c`
-  - Reads a full line of text including spaces using `scanf("%99[^\n]", name)`.
-  - Prints the entire input string.
+#### 4. Basic `for` Loop Frameworks
+* **Loop Structure**: A compact loop notation with initialization, condition, and increment/decrement all defined in the header.
+  ```c
+  for (int i = 0; i <= 10; i++) {
+      // Loop body
+  }
+  ```
 
-## Concepts Covered
+---
 
-- `while` loops and loop termination
-- Prefix `++i` / postfix `i++` increment behavior
-- Prefix `--i` / postfix `i--` decrement behavior
-- Passing arrays and values to functions
-- Reading string input with `scanf` and the `%[^
-]` format specifier
-- Using `printf` to print formatted output
+### Day 4 File Walkthrough
 
-## How to Compile and Run
+#### 1. [ans.c](file:///d:/Desktop/C_Programming/C-programming/03_loops_and_logical_reasoning/ans.c)
+* **Concepts**: Grading logic, boundary limits, conditional branches.
+* **Summary**: Implements grading system boundaries from 0 to 15 (e.g. 15 = A, 10 to 14 = B, 5 to 9 = P, 0 to 4 = Fail).
+* **Code Highlight**:
+  ```c
+  if (marks == 15) {
+      printf("A");
+  } else if (marks < 15 && marks >= 10) {
+      printf("B");
+  } else if (marks >= 5 && marks < 10) {
+      printf("P");
+  } else if( marks < 5 && marks >= 0) {
+      printf("Fail");
+  } else {
+      printf("Enter the marks with in range (0-15)");
+  }
+  ```
 
-Open a terminal in this folder and run:
+#### 2. [ans2.c](file:///d:/Desktop/C_Programming/C-programming/03_loops_and_logical_reasoning/ans2.c)
+* **Concepts**: Multiplicative progression, iteration steps.
+* **Summary**: Calculates the multiplication table of a user-entered number using a `while` loop from 1 to 10.
+* **Code Highlight**:
+  ```c
+  while (num <= 10 && num < 11) {
+      cal = num * num_user;
+      printf("%d * %d = %d \n", num, num_user, cal);
+      ++num;
+  }
+  ```
 
-```powershell
-cd "c:\Users\SOVAN\OneDrive\Documents\C-programming\02_loops_probelems"
+#### 3. [for.c](file:///d:/Desktop/C_Programming/C-programming/03_loops_and_logical_reasoning/for.c)
+* **Concepts**: Compact iteration framework, `for` loops.
+* **Summary**: Demonstrates the framework of a basic `for` loop, printing integers from 0 to 10.
+* **Code Highlight**:
+  ```c
+  for (int i = 0; i <= 10; i++) {
+      printf("%d\n ", i);
+  }
+  ```
 
-gcc condition.c -o condition.exe
-gcc details.c -o details.exe
-gcc increment.c -o increment.exe
-gcc infinite_loop.c -o infinite_loop.exe
-gcc loops.c -o loops.exe
-gcc string.c -o string.exe
-```
+#### 4. [infinite_loop.c](file:///d:/Desktop/C_Programming/C-programming/03_loops_and_logical_reasoning/infinite_loop.c) & [loops.c](file:///d:/Desktop/C_Programming/C-programming/03_loops_and_logical_reasoning/loops.c)
+* **Concepts**: Countdown loop iteration, counter updates.
+* **Summary**: Runs a countdown from 9 to 0, showing how updating the variable via `--i` prevents the infinite loop issue.
+* **Code Highlight**:
+  ```c
+  int i = 9;
+  while (i >= 0) {
+      printf("I am running current val : %d \n ", i);
+      --i;
+  }
+  ```
 
-Then run any program, for example:
+#### 5. [while_loop.c](file:///d:/Desktop/C_Programming/C-programming/03_loops_and_logical_reasoning/while_loop.c)
+* **Concepts**: Factorial math, accumulator update logic.
+* **Summary**: Implements a factorial calculation algorithm for a user-entered number using iteration.
+* **Code Highlight**:
+  ```c
+  while (fact > 0) {
+      Factorial = fact * Factorial;
+      fact = fact - 1;
+  }
+  ```
 
-```powershell
-./loop.exe
-```
+---
 
-## Practice Questions and Answers
+## Practice Problems: Loops & Number Theory
 
-1. What will the output of `increment.c` be when `i = 6`, `j = 9`, and `k = 15`?
-   - Answer: `28`
-   - Explanation: `i + j + 1 + (++i) + (--j) - (++j) - (++k)` evaluates to `6 + 9 + 1 + 7 + 8 - 9 - 16 = 28`.
+This section documents standard loop practice exercises and arithmetic operations present in [poblems.txt](file:///d:/Desktop/C_Programming/C-programming/Problem_Statements_and_solution/poblems.txt).
 
-2. In `string.c`, why is the format string `%99[^\n]` used instead of `%s`?
-   - Answer: Because `%99[^\n]` reads an entire line including spaces, while `%s` stops at the first whitespace.
+### Problem Descriptions
 
-3. What does `--i` do inside the `while` loop in `infinite_loop.c`?
-   - Answer: It decrements `i` by one before the next loop iteration, eventually making the loop condition false.
-
-4. What is the difference between `i++` and `++i`?
-   - Answer: `i++` returns the original value before incrementing; `++i` increments first and returns the new value.
-
-5. How does `condition.c` pass the student name to the `info()` function?
-   - Answer: It passes the array `name` as an argument. In C, arrays decay into pointers, so the function receives a reference to the first character of the string.
-
-## Notes
-
-- `details.c` and `condition.c` both demonstrate the same function concept; one includes a student information function and the other is the same example.
-- If you want to make `details.c` interactive, use `scanf()` inside `main()` to read the student name, college, and roll number before calling `info()`.
-
->>>>>>>>> Temporary merge branch 2
+| # | Problem | Description | Input Example | Output Example |
+|---|---------|-------------|---------------|----------------|
+| 1 | **Reverse a Number** | Reverse a given integer using a `while` loop. | `12345` | `54321` |
+| 2 | **Check Palindrome Number** | Check whether a number is equal to its reverse using a `while` loop. | `121` | `Palindrome` |
+| 3 | **Sum of Digits** | Find the sum of digits of a given integer. | `456` | `15` |
+| 4 | **Count Digits** | Count the total number of digits in an integer. | `123456` | `6` |
+| 5 | **Find Largest Digit** | Identify the largest digit present in a number. | `58321` | `8` |
+| 6 | **Decimal to Binary Conversion** | Convert a base-10 decimal number to base-2 binary format using a `while` loop. | `10` | `1010` |
+| 7 | **Armstrong Number Check** | Check whether a 3-digit number is an Armstrong number ($d_1^3 + d_2^3 + d_3^3 = N$). | `153` | `Armstrong Number` |
+| 8 | **GCD of Two Numbers** | Calculate the Greatest Common Divisor (GCD) of two numbers using a `while` loop. | `24 36` | `12` |
+| 9 | **Print Fibonacci Series** | Print the first $n$ terms of the Fibonacci sequence using a `while` loop. | `7` | `0 1 1 2 3 5 8` |
+| 10 | **Number Guessing Game** | A guessing game that requests input until the user guesses a secret number (e.g. 25) correctly. | `10`<br>`40`<br>`25` | `Too Low`<br>`Too High`<br>`Correct!` |
