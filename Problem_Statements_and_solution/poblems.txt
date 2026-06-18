@@ -1,0 +1,102 @@
+1. Reverse a Number
+
+Write a C program to reverse a given integer using a while loop.
+Input: 12345
+Output: 54321
+
+
+2. Check Palindrome Number
+
+Write a program to check whether a number is a palindrome or not using a while loop.
+
+Example:
+
+Input: 121
+Output: Palindrome
+
+
+
+3. Sum of Digits
+
+Write a program to find the sum of digits of a given number.
+
+Example:
+
+Input: 456
+Output: 15
+
+
+4. Count Digits
+
+Write a program to count the number of digits in an integer.
+
+Example:
+
+Input: 123456
+Output: 6
+
+
+5. Find Largest Digit
+
+Write a program to find the largest digit present in a number.
+
+Example:
+
+Input: 58321
+Output: 8
+
+
+
+6. Decimal to Binary Conversion
+
+Write a program to convert a decimal number into binary using a while loop.
+
+Example:
+
+Input: 10
+Output: 1010
+
+
+
+7. Armstrong Number Check
+
+Write a program to check whether a 3-digit number is an Armstrong number.
+
+Example:
+
+Input: 153
+Output: Armstrong Number
+
+
+
+8. GCD of Two Numbers
+
+Write a program to find the Greatest Common Divisor (GCD) of two numbers using a while loop.
+
+Example:
+
+Input: 24 36
+Output: 12
+
+
+
+9. Print Fibonacci Series
+
+Write a program to print the first n terms of the Fibonacci series using a while loop.
+
+Example:
+
+Input: 7
+Output: 0 1 1 2 3 5 8
+
+
+
+10. Number Guessing Game
+
+Generate a fixed secret number (e.g., 25). Keep asking the user to guess until they enter the correct number using a while loop.
+
+Example:
+
+Guess: 10 → Too Low
+Guess: 40 → Too High
+Guess: 25 → Correct!
