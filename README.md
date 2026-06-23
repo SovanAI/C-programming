@@ -24,21 +24,24 @@ Welcome to the C Programming learning repository! This workspace tracks core pro
 * **[Day 5: Arrays & Pointers](#day-5-arrays--pointers)**
   * [Topics Covered](#day-5-topics-covered)
   * [File Walkthrough (`04_Arrays_pointers`)](#day-5-file-walkthrough)
-* **[Day 6: Sorting Techniques](#day-6-sorting-techniques)**
+* **[Day 6: Searching Techniques](#day-6-searching-techniques)**
   * [Topics Covered](#day-6-topics-covered)
-  * [File Walkthrough (`05_Sorting_techhniques`)](#day-6-file-walkthrough)
-* **[Day 7: Pattern Printing](#day-7-pattern-printing)**
+  * [File Walkthrough (`05_Searching_techniques`)](#day-6-file-walkthrough)
+* **[Day 7: Sorting Techniques](#day-7-sorting-techniques)**
   * [Topics Covered](#day-7-topics-covered)
-  * [File Walkthrough (`06_pattern_printing`)](#day-7-file-walkthrough)
-* **[Day 8: Structures](#day-8-structures)**
+  * [File Walkthrough (`05_Sorting_techhniques`)](#day-7-file-walkthrough)
+* **[Day 8: Pattern Printing](#day-8-pattern-printing)**
   * [Topics Covered](#day-8-topics-covered)
-  * [File Walkthrough (`07_Structures`)](#day-8-file-walkthrough)
-* **[Day 9: File Handling](#day-9-file-handling)**
+  * [File Walkthrough (`06_pattern_printing`)](#day-8-file-walkthrough)
+* **[Day 9: Structures](#day-9-structures)**
   * [Topics Covered](#day-9-topics-covered)
-  * [File Walkthrough (`08_File_Handelling`)](#day-9-file-walkthrough)
-* **[Day 10: Data Structures & Algorithms](#day-10-data-structures--algorithms)**
+  * [File Walkthrough (`07_Structures`)](#day-9-file-walkthrough)
+* **[Day 10: File Handling](#day-10-file-handling)**
   * [Topics Covered](#day-10-topics-covered)
-  * [File Walkthrough (`09_DSA`)](#day-10-file-walkthrough)
+  * [File Walkthrough (`08_File_Handelling`)](#day-10-file-walkthrough)
+* **[Day 11: Data Structures & Algorithms](#day-11-data-structures--algorithms)**
+  * [Topics Covered](#day-11-topics-covered)
+  * [File Walkthrough (`09_DSA`)](#day-11-file-walkthrough)
 * **[Practice Problems: Loops & Number Theory](#practice-problems-loops--number-theory)**
   * [Problem Descriptions (`Problem_Statements_and_solution`)](#problem-descriptions-problem_statements_and_solution)
 * **[Comprehensive Solved Practice Problems](#comprehensive-solved-practice-problems)**
@@ -646,11 +649,54 @@ This folder ([04_Arrays_pointers](file:///d:/Desktop/C_Programming/C-programming
 
 ---
 
-## Day 6: Sorting Techniques
+## Day 6: Searching Techniques
 
-This folder ([05_Sorting_techhniques](file:///d:/Desktop/C_Programming/C-programming/05_Sorting_techhniques)) implements three fundamental comparison-based sorting algorithms in C: Bubble Sort, Insertion Sort, and Selection Sort. It also demonstrates variable swapping techniques.
+This folder ([05_Searching_techniques](file:///d:/Desktop/C_Programming/C-programming/05_Searching_techniques)) covers standard searching algorithms in C, used to locate target elements within arrays.
 
 ### Day 6 Topics Covered
+
+#### 1. Linear Search
+* **Logic**: Iterates sequentially through each element of the array from index `0` to `n - 1` and compares each element with the target. Returns the index if a match is found, or `-1` if the loop completes without finding the target.
+* **Complexity**: Time complexity is $O(N)$ in the worst and average cases. Requires $O(1)$ auxiliary space. Works on both sorted and unsorted arrays.
+
+#### 2. Binary Search
+* **Logic**: A highly efficient search algorithm that works on **already sorted arrays** by using a divide-and-conquer strategy. It repeatedly divides the search interval in half by comparing the middle element with the target. If the target is smaller, the search continues in the left half; if larger, it continues in the right half.
+* **Complexity**: Time complexity is $O(\log N)$ in the worst and average cases. Requires $O(1)$ auxiliary space for the iterative version.
+
+---
+
+### Day 6 File Walkthrough
+
+#### 1. [linear_search.c](file:///d:/Desktop/C_Programming/C-programming/05_Searching_techniques/linear_search.c)
+* **Concepts**: Sequential traversal of arrays, target boundary checking, returning index or failure codes.
+* **Code Highlight**:
+  ```c
+  for (int i = 0; i < n; i++) {
+      if (arr[i] == target) {
+          return i;
+      }
+  }
+  ```
+
+#### 2. [binary_search.c](file:///d:/Desktop/C_Programming/C-programming/05_Searching_techniques/binary_search.c)
+* **Concepts**: Binary search interval halving (`low`, `high`, `mid`), handling overflow when calculating indices.
+* **Code Highlight**:
+  ```c
+  while (low <= high) {
+      int mid = low + (high - low) / 2;
+      if (arr[mid] == target) return mid;
+      if (arr[mid] < target) low = mid + 1;
+      else high = mid - 1;
+  }
+  ```
+
+---
+
+## Day 7: Sorting Techniques
+
+This folder ([05_Sorting_techhniques](file:///d:/Desktop/C_Programming/C-programming/05_Sorting_techhniques)) implements six fundamental comparison-based sorting algorithms in C: Bubble Sort, Insertion Sort, Selection Sort, Merge Sort, Quick Sort, and Heap Sort. It also demonstrates variable swapping techniques.
+
+### Day 7 Topics Covered
 
 #### 1. Swapping Algorithms
 * **With a Temporary Variable**: Stores the value of `a` in `temp`, copies `b` to `a`, and then copies `temp` to `b`.
@@ -669,9 +715,21 @@ This folder ([05_Sorting_techhniques](file:///d:/Desktop/C_Programming/C-program
 * **Logic**: Divides the array into sorted and unsorted parts. Repeatedly finds the minimum element from the unsorted part and swaps it with the first element of the unsorted part.
 * **Optimization**: Swaps only if the minimum element's index is different from the current position.
 
+#### 5. Merge Sort
+* **Logic**: A divide-and-conquer algorithm. It recursively splits the array in half, recursively sorts each half, and merges the sorted halves back together.
+* **Complexity**: Guarantees a time complexity of $O(N \log N)$ in all cases (worst, average, best), but requires $O(N)$ auxiliary memory for merging.
+
+#### 6. Quick Sort
+* **Logic**: A divide-and-conquer algorithm that selects a "pivot" element and partitions the array such that elements smaller than the pivot are moved to its left, and larger elements are moved to its right. It then recursively sorts the sub-arrays.
+* **Complexity**: Average time complexity of $O(N \log N)$, worst-case complexity of $O(N^2)$ (when partitioning is highly unbalanced), but performs in-place sorting without requiring extra memory like Merge Sort.
+
+#### 7. Heap Sort
+* **Logic**: A comparison-based sorting technique based on Binary Heap data structure. It builds a Max Heap from the input data, then repeatedly extracts the maximum element and restores the heap property.
+* **Complexity**: Guarantees a time complexity of $O(N \log N)$ in all cases and sorts in-place (requires $O(1)$ auxiliary space).
+
 ---
 
-### Day 6 File Walkthrough
+### Day 7 File Walkthrough
 
 #### 1. [swap.c](file:///d:/Desktop/C_Programming/C-programming/05_Sorting_techhniques/swap.c)
 * **Concepts**: Swapping two numbers using a third helper variable vs direct arithmetic expressions.
@@ -735,13 +793,65 @@ This folder ([05_Sorting_techhniques](file:///d:/Desktop/C_Programming/C-program
   }
   ```
 
+#### 5. [merge_sort.c](file:///d:/Desktop/C_Programming/C-programming/05_Sorting_techhniques/merge_sort.c)
+* **Concepts**: Divide-and-conquer recursive sorting, memory management (dynamic allocation with `malloc`), sub-array boundary merging.
+* **Code Highlight (Merging logic)**:
+  ```c
+  void merge(int arr[], int l, int m, int r) {
+      int n1 = m - l + 1;
+      int n2 = r - m;
+      int *L = (int *)malloc(n1 * sizeof(int));
+      int *R = (int *)malloc(n2 * sizeof(int));
+      // ... Copy and merge sub-arrays ...
+      free(L);
+      free(R);
+  }
+  ```
+
+#### 6. [quick_sort.c](file:///d:/Desktop/C_Programming/C-programming/05_Sorting_techhniques/quick_sort.c)
+* **Concepts**: Divide-and-conquer recursive partitioning, in-place index sorting, helper swapping using pointers.
+* **Code Highlight (Partitioning function)**:
+  ```c
+  int partition(int arr[], int low, int high) {
+      int pivot = arr[high];
+      int i = (low - 1);
+      for (int j = low; j < high; j++) {
+          if (arr[j] <= pivot) {
+              i++;
+              swap(&arr[i], &arr[j]);
+          }
+      }
+      swap(&arr[i + 1], &arr[high]);
+      return (i + 1);
+  }
+  ```
+
+#### 7. [heap_sort.c](file:///d:/Desktop/C_Programming/C-programming/05_Sorting_techhniques/heap_sort.c)
+* **Concepts**: Heap tree structures, Max Heap building, recursive heapify algorithm.
+* **Code Highlight (Heapify structure)**:
+  ```c
+  void heapify(int arr[], int n, int i) {
+      int largest = i;
+      int left = 2 * i + 1;
+      int right = 2 * i + 2;
+      if (left < n && arr[left] > arr[largest])
+          largest = left;
+      if (right < n && arr[right] > arr[largest])
+          largest = right;
+      if (largest != i) {
+          swap(&arr[i], &arr[largest]);
+          heapify(arr, n, largest);
+      }
+  }
+  ```
+
 ---
 
-## Day 7: Pattern Printing
+## Day 8: Pattern Printing
 
 This folder ([06_pattern_printing](file:///d:/Desktop/C_Programming/C-programming/06_pattern_printing)) explores dynamic pattern design in C. Pattern printing helps build logical reasoning by mapping mathematical formulas to nested coordinate loops (rows and columns) to print alignment characters like `*`.
 
-### Day 7 Topics Covered
+### Day 8 Topics Covered
 
 #### 1. Basic Pyramids
 * **Half Pyramid**: Outer loop tracks row `i`, inner loop prints `i` stars.
@@ -759,7 +869,7 @@ This folder ([06_pattern_printing](file:///d:/Desktop/C_Programming/C-programmin
 
 ---
 
-### Day 7 File Walkthrough
+### Day 8 File Walkthrough
 
 #### 1. [patterns.c](file:///d:/Desktop/C_Programming/C-programming/06_pattern_printing/patterns.c)
 * **Concepts**: Comprehensive pattern printing library containing half, inverted half, full, hollow full pyramids, Floyd's triangle, and Pascal's triangle.
@@ -804,11 +914,11 @@ This folder ([06_pattern_printing](file:///d:/Desktop/C_Programming/C-programmin
 
 ---
 
-## Day 8: Structures
+## Day 9: Structures
 
 This folder ([07_Structures](file:///d:/Desktop/C_Programming/C-programming/07_Structures)) covers structure declaration, initialization, pointer reference manipulation, passing structural records to functions, structural arrays, and nested structures in C.
 
-### Day 8 Topics Covered
+### Day 9 Topics Covered
 
 #### 1. Structures and Typedef Alias
 * **`typedef struct`**: Declares a template structure under a simplified alias type (e.g. `Book` instead of `struct Book`), reducing syntax overhead.
@@ -828,7 +938,7 @@ This folder ([07_Structures](file:///d:/Desktop/C_Programming/C-programming/07_S
 
 ---
 
-### Day 8 File Walkthrough
+### Day 9 File Walkthrough
 
 #### 1. [structures.c](file:///d:/Desktop/C_Programming/C-programming/07_Structures/structures.c)
 * **Concepts**: Declaring basic structures, structure pointers, pass-by-value vs pass-by-reference updates, structured arrays, and nested records.
@@ -841,11 +951,11 @@ This folder ([07_Structures](file:///d:/Desktop/C_Programming/C-programming/07_S
 
 ---
 
-## Day 9: File Handling
+## Day 10: File Handling
 
 This folder ([08_File_Handelling](file:///d:/Desktop/C_Programming/C-programming/08_File_Handelling)) covers file stream input/output operations in C. It details reading, writing, and appending text files, copying file streams byte-by-byte, and serializing complex structure objects into binary files.
 
-### Day 9 Topics Covered
+### Day 10 Topics Covered
 
 #### 1. Streams and standard File pointer (`FILE *`)
 * Files are accessed via a `FILE *` pointer which manages the stream buffer.
@@ -869,7 +979,7 @@ This folder ([08_File_Handelling](file:///d:/Desktop/C_Programming/C-programming
 
 ---
 
-### Day 9 File Walkthrough
+### Day 10 File Walkthrough
 
 #### 1. [file_handling.c](file:///d:/Desktop/C_Programming/C-programming/08_File_Handelling/file_handling.c)
 * **Concepts**: Full demonstrations of opening, processing, checking for `NULL` errors, closing file pointers using `fclose`, copying text files, and binary structures serialization.
@@ -885,11 +995,11 @@ This folder ([08_File_Handelling](file:///d:/Desktop/C_Programming/C-programming
 
 ---
 
-## Day 10: Data Structures & Algorithms
+## Day 11: Data Structures & Algorithms
 
 This folder ([09_DSA](file:///d:/Desktop/C_Programming/C-programming/09_DSA)) tracks basic to advanced data structures and algorithm design patterns implemented in Jupyter Notebook format. It is a comprehensive algorithmic companion to C development.
 
-### Day 10 Topics Covered
+### Day 11 Topics Covered
 
 #### 1. Linear Data Structures
 * **Singly Linked List (`singly_linkedlist.ipynb`)**: Node pointers chaining in one direction, inserting/deleting elements at start/end/middle.
@@ -911,7 +1021,7 @@ This folder ([09_DSA](file:///d:/Desktop/C_Programming/C-programming/09_DSA)) tr
 
 ---
 
-### Day 10 File Walkthrough
+### Day 11 File Walkthrough
 
 #### 1. [singly_linkedlist.ipynb](file:///d:/Desktop/C_Programming/C-programming/09_DSA/singly_linkedlist.ipynb)
 * **Concepts**: Chaining structure elements together dynamically. Demonstrates head reference tracking and node pointer updates.
